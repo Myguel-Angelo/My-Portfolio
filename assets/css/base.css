@@ -154,9 +154,6 @@ h1, h2 {
 
 /* Estilizando as seções */
 .section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 80vh; /* Tamanho de cada seção: 100% da altura da viewport */
     text-align: center;
     transition: all 300ms ease-in-out;
