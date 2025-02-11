@@ -26,9 +26,23 @@ body {
     background-color: var(--system-colorA);
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
+p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: var(--contrast-colorB);
+}
+.container {
+    max-width: 120rem;
+}
+
+.section {
+    padding: 6.7rem 0;
+}
+
+
 
 /* Barra de navegação */
 .navbar {

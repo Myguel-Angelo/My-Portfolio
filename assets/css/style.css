@@ -1,141 +1,15 @@
-
-/* Seção 1: Início com foto, título e pequeno texto */
-#home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+:root {
+    --dark-primary-color: #232323;
+    --dark-secondary-color: #1C1C1C;
+    --light-primary-color: #ededed;
+    --light-secondary-color: #dedede;
+    --contrast-colorA: #10a23c;
+    --dark-contrast-color: #ededed;
+    --light-contrast-color: #232323;
+    --system-colorA: var(--dark-primary-color);
+    --system-colorB: var(--dark-secondary-color);
+    --contrast-colorB: var(--dark-contrast-color);
+    --button-hover: #13692d;
 }
 
-.home-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    max-width: 120rem;
-    margin: 6rem 2rem;  
-    gap: 4rem;
-}
-
-.text-content {
-    color: var(--contrast-colorB);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.text-content h1 {
-    font-size: 6rem; /* Ajustável */
-    margin-bottom: 1rem;
-    font-weight: 800;
-    color: var(--contrast-colorB);
-}
-
-.text-content p {
-    font-size: 1.8rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-}
-
-.text-content .highlight {
-    color: var(--contrast-colorA);
-}
-
-.cta-buttons {
-    margin-top: 1.5rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: var(--contrast-colorA);
-    color: var(--contrast-colorB);
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.6rem;
-    transition: all 0.2s ease-in-out;
-    margin-right: 1rem;
-    font-weight: 600;
-}
-
-.btn:hover {
-     background-color: var(--button-hover);
-}
-
-.btn-outline {
-    background-color: transparent;
-    border: 2px solid var(--contrast-colorA);
-}
-
-.btn-outline:hover {
-    background-color: var(--button-hover);
-    /* border: 2px solid var(--button-hover); */
-}
-
-.image-placeholder {
-    max-width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-bg {
-    margin-top: 3rem;
-    width: 50rem;
-    height: 50rem;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.1),
-        rgba(0, 0, 0, 0.1)
-        ),
-        url('/assets/img/ft-perfil1.png') center/cover no-repeat;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-/* Responsividade da seção 1 */
-@media (max-width: 980px) {
-    .section .container {
-        grid-template-columns: 1fr;
-    }
-    .text-content {
-        align-items: center;
-        justify-content: center;
-    }
-    .text-content h1 {
-        padding-top: 4rem;
-        text-align: center;
-        font-size: 4.5rem;
-    }
-    .text-content p {
-        text-align: center;
-    }
-    .image-bg {
-        margin-top: 1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .image-bg {
-        width: 40rem;
-        height: 40rem;
-    }
-}
-
-@media (max-width: 450px) {
-    .image-bg {
-        width: 30rem;
-        height: 30rem;
-    }
-    .cta-buttons {
-        display: flex;
-        flex-direction: column;
-    }
-    .btn {
-        margin: 0;
-        margin-top: 1.5rem;
-    }
-}
-
-
-
-
+/* .divider-1 {} */
