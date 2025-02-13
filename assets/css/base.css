@@ -16,18 +16,24 @@
     --system-colorB: var(--dark-secondary-color);
     --contrast-colorB: var(--dark-contrast-color);
     --button-hover: #13692d;
+    --bg-dark1: url('../img/backgrounds/bg-dark1.svg');
+    --bg-dark2: url('../img/backgrounds/bg-dark2.svg');
+    --bg-light1: url('../img/backgrounds/bg-light1.svg');
+    --bg-light2: url('../img/backgrounds/bg-light2.svg');
+    --primary-bg: var(--bg-dark1);
+    --secondary-bg: var(--bg-dark2);
 }
 
 html {
     font-size: 62.5%; scroll-behavior: smooth;
 }
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Lato", serif;
     background-color: var(--system-colorA);
 }
 
 h1, h2, h3 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch';
 }
 p {
     font-size: 1.8rem;
@@ -72,10 +78,10 @@ p {
 /* Nome do portfólio */
 .nav-container h1 {
     display: flex;
-    font-family: 'Roboto';
+    font-family: "Lato", serif;
     padding: 2rem;
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 900;
     margin: 0;
     color: var(--contrast-colorA); /* Verde para destaque */
 }
@@ -164,13 +170,34 @@ p {
     --system-colorB: var(--light-secondary-color);
     --contrast-colorB: var(--light-contrast-color);
     --button-hover: #0bd046;
+    --primary-bg: var(--bg-light1);
+    --secondary-bg: var(--bg-light2);
+}
+
+#info {
+    color: var(--contrast-colorA);
+    display: inline-block;
+}
+
+.cursor::after {
+    content: "|";
+    color: var(--contrast-colorB);
+    font-size: 2.65rem;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
 
 /* Estilizando as seções */
 .section {
     min-height: 80vh; /* Tamanho de cada seção: 100% da altura da viewport */
     text-align: center;
-    transition: all 300ms ease-in-out;
 }
 
 .primary-color {
