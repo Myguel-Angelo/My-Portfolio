@@ -44,9 +44,6 @@ p {
     max-width: 120rem;
 }
 
-.section {
-    padding: 6.7rem 0;
-}
 
 
 
@@ -196,7 +193,9 @@ p {
 
 /* Estilizando as seções */
 .section {
-    min-height: 80vh; /* Tamanho de cada seção: 100% da altura da viewport */
+    padding: 2rem;
+    padding-top: 6rem;
+    min-height: 90vh; /* Tamanho de cada seção: 100% da altura da viewport */
     text-align: center;
 }
 
