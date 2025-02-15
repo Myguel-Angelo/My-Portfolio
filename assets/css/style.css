@@ -122,57 +122,86 @@
 
 #profile {
     display: flex;
-    gap: 1rem;
-    max-width: 140rem;
+    top: 0;
     margin: 0 auto;
+    max-width: 140rem;
+    justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
     transition: all 400ms ease;
 }
 
 .card {
-    min-width: 20rem;
-    min-height: 60rem;
-    flex: 1;
+    min-height: 65rem;
     background: var(--system-colorB);
     color: var(--contrast-colorB);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     border-radius: 1rem;
     cursor: pointer;
     transition: all 400ms ease;
     overflow: hidden;
     position: relative;
+    margin: 1rem;
+    flex: 1;
+}
+
+.card[for='c1']{
+    background-image: url('../img/profile-cards/eu-bg.jpg');
+    background-position: left;
+    background-size: cover;
+}
+.card[for='c2']{
+    background-image: url('../img/profile-cards/eu-bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.card[for='c3']{
+    background-image: url('../img/profile-cards/eu-bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.card[for='c4']{
+    background-image: url('../img/profile-cards/eu-bg.jpg');
+    background-position: right;
+    background-size: cover;
 }
 
 .card .card-content {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
     opacity: 0;
-    transition: opacity 300ms ease;
-}
-
-.card.expanded {
-    flex: 1;
-}
-
-.card.expanded .card-content.visible {
-    opacity: 1;
+    transition: opacity 400ms ease-in-out, left 400ms ease, z-index 400ms ease;
+    left: -100%;
+    z-index: -1;
 }
 
 .card.hidden {
-    display: none;
+    flex: 0;
+    margin: 0;
+}
+.card.invisible {
+    opacity: 0;
 }
 
-@media (max-width: 910px) {
+.card-content.visible {
+    opacity: 1;
+    z-index: 1;
+    left: 0.5rem;
+}
+
+@media (max-width: 950px) {
     #profile {
         flex-direction: column;
-        flex-wrap: nowrap;
     }
     .card {
         min-height: 10rem;
+        width: 100%;
+    }
+    .card.hidden {
+        flex: 0;
+        margin: 0;
+        min-height: 0;
+    }
+    .card.card.hidden h3 {
+        display: none;
     }
 }
+

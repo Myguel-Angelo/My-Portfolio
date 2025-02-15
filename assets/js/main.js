@@ -14,31 +14,60 @@ navLinks.forEach(link => {
     });
 });
 
-
+/*
 function expandCard(card, cardId) {
     let expandedCard = document.querySelector('.card.expanded');
-    let cardContent = document.querySelector('.card-content.visible');
+    let newCardContent = document.querySelector('.cont'+cardId);
+
+    if (expandedCard && expandedCard !== card) {
+        return
+    }
+    if (expandedCard) {
+        newCardContent.classList.toggle('visible');
+        setTimeout(() => {
+            card.classList.toggle('expanded');
+        }, 300);
+    } else {
+        card.classList.toggle('expanded');
+        setTimeout(() => {
+            newCardContent.classList.toggle('visible');
+        }, 400);
+    }
+}
+*/
+function expandCard(card, cardId) {
+    let expandedCard = document.querySelector('.card.expanded');
     let newCardContent = document.querySelector('.cont' + cardId);
     let allCards = document.querySelectorAll('.card');
 
     if (expandedCard && expandedCard !== card) {
         return;
     }
-    if (expandedCard) {
-        newCardContent.classList.toggle('visible');
-        setTimeout(() => {
-            card.classList.toggle('expanded');
-            allCards.forEach(c => c.classList.remove('hidden'));
-        }, 300);
-    } else {
+    if (!expandedCard) {
+        card.classList.add('expanded');
         allCards.forEach(c => {
             if (c !== card) {
-                c.classList.add('hidden');
+                c.classList.add('invisible');
+                setTimeout(() => {
+                    c.classList.add('hidden');
+                    setTimeout(() => {
+                        newCardContent.classList.add('visible');
+                    }, 400);
+                }, 400);
             }
-        });
-        card.classList.toggle('expanded');
+        })
+    } else {
+        card.classList.remove('expanded');
+        newCardContent.classList.remove('visible');
         setTimeout(() => {
-            newCardContent.classList.toggle('visible');
+            allCards.forEach(c => {
+                if (c !== card) {
+                    c.classList.remove('hidden');
+                    setTimeout(() => {
+                        c.classList.remove('invisible');
+                    }, 400);
+                }
+            })
         }, 400);
     }
 }
@@ -52,33 +81,33 @@ let indiceTexto = 0;
 let indiceLetra = 0;
 let apagando = false;
 
-// function escreverTexto() {
-//     if (!apagando) {
-//         if (indiceLetra < textos[indiceTexto].length) {
-//             elemento.textContent += textos[indiceTexto][indiceLetra];
-//             indiceLetra++;
-//             setTimeout(escreverTexto, 100);
-//         } else {
-//             setTimeout(() => {
-//                 apagando = true;
-//                 apagarTexto();
-//             }, 1500);
-//         }
-//     }
-// }
-// function apagarTexto() {
-//     if (apagando) {
-//         if (indiceLetra > 0) {
-//             elemento.textContent = textos[indiceTexto].substring(0, indiceLetra - 1);
-//             indiceLetra--;
-//             setTimeout(apagarTexto, 50);
-//         } else {
-//             apagando = false;
-//             indiceTexto = (indiceTexto + 1) % textos.length;
-//             setTimeout(escreverTexto, 500);
-//         }
-//     }
-// }
+function escreverTexto() {
+    if (!apagando) {
+        if (indiceLetra < textos[indiceTexto].length) {
+            elemento.textContent += textos[indiceTexto][indiceLetra];
+            indiceLetra++;
+            setTimeout(escreverTexto, 100);
+        } else {
+            setTimeout(() => {
+                apagando = true;
+                apagarTexto();
+            }, 1500);
+        }
+    }
+}
+function apagarTexto() {
+    if (apagando) {
+        if (indiceLetra > 0) {
+            elemento.textContent = textos[indiceTexto].substring(0, indiceLetra - 1);
+            indiceLetra--;
+            setTimeout(apagarTexto, 50);
+        } else {
+            apagando = false;
+            indiceTexto = (indiceTexto + 1) % textos.length;
+            setTimeout(escreverTexto, 500);
+        }
+    }
+}
 
-// escreverTexto();
+escreverTexto();
 
